@@ -1,5 +1,8 @@
 # bilibili_video_crawing
 哔哩哔哩，B站视频和封面原图爬取
+主要界面
+![ff0ad1b081273a514edf3b50a2172e1](https://user-images.githubusercontent.com/66453249/211449665-0874eec5-5e67-42e2-88a9-2fce67c9c3e3.jpg)
+
 
 其中about_test 的文件为测试文件夹，可供思路研究
 如果要直接使用，把里面的jm_cmd_B站视频封面爬取.exe文件 + info.json + ffmpeg.exe，
