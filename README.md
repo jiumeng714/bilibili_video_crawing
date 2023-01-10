@@ -6,7 +6,7 @@
 这三个文件拿出来放到一个文件夹里面就可以正常使用
 
 具体的代码思路可以看看这篇文章：
-https://www.bilibili.com/read/preview/21098039
+https://www.bilibili.com/read/cv21098039
 
 使用时，如果不添加cookie，则下载的视频质量最高只有480P，
 添加cookie的方法，打开B站网页，登陆账号，然后F12，点到“网络”，再刷新网页，随便点一条获取到的请求，都有cookie：
