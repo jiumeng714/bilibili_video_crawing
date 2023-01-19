@@ -11,7 +11,7 @@ import getVideo as gv  # 获取视频
 import getVideoPicture as gp  # 获取视频原图
 from tkinter import scrolledtext
 import CookieOperation as cookieOP  # 将cookie字符串转字典
-
+import getPreviewPictures as gpp  # 获取预览图片
 
 global_dict = {}
 
@@ -125,7 +125,7 @@ if __name__ == '__main__':
         child_btn.place(relx=0.35, relheight=0.1, relwidth=0.3, rely=0.7)
 
     # 保存封面
-    def btn4_fn():
+    def btn5_fn():
         url = text1.get('1.0', 'end').strip()
         if url == '':
             tk.messagebox.showinfo('error', '视频URL还没输入！')
@@ -137,15 +137,35 @@ if __name__ == '__main__':
                 gp.getPictureMain(newBV, global_dict, fileName)
                 tk.messagebox.showinfo('success', '保存图片成功！')
 
+    # 查看封面
+    def btn4_fn():
+        url = text1.get('1.0', 'end').strip()
+        if url == '':
+            tk.messagebox.showinfo('error', '视频URL还没输入！')
+        else:
+            newBV = gv.getBVbyUrl(url)
+            pictureUrl = gp.getPictureUrl(newBV)  # 获取到需要预览的图片地址
+            # 创建子窗口
+            child_window2 = tk.Toplevel(root)
+            child_window2.title('封面预览')
+            tk_image = gpp.returnPicture(pictureUrl)
+            label = tk.Label(child_window2, image=tk_image, bg='brown')
+            label.pack(padx=5, pady=5)
+            child_window2.geometry('800x500+250+150')
+            child_window2.mainloop()
+
 
     btn2 = ttk.Button(root, text='爬取视频', style='ZHL.TButton', command=btn2_fn)
     btn2.place(relx=0.35, rely=0.7, relwidth=0.3, relheight=0.1)
 
     btn3 = ttk.Button(root, text='添加Cookie', style='ZHL.TButton', command=btn3_fn)
-    btn3.place(relx=0.05, rely=0.8, relwidth=0.2, relheight=0.06)
+    btn3.place(relx=0.05, rely=0.75, relwidth=0.2, relheight=0.06)
 
-    btn4 = ttk.Button(root, text='保存封面', style='ZHL.TButton', command=btn4_fn)
-    btn4.place(relx=0.05, rely=0.89, relwidth=0.2, relheight=0.06)
+    btn4 = ttk.Button(root, text='查看封面', style='ZHL.TButton', command=btn4_fn)
+    btn4.place(relx=0.05, rely=0.82, relwidth=0.2, relheight=0.06)
+
+    btn5 = ttk.Button(root, text='保存封面', style='ZHL.TButton', command=btn5_fn)
+    btn5.place(relx=0.05, rely=0.89, relwidth=0.2, relheight=0.06)
 
     def myDefault():
         text.insert('end', '输出结果台：\n注意！如果不加入B站cookie，则最高画质只有480p！\n')

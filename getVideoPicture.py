@@ -58,6 +58,26 @@ def getDefaultFileName(bvNo):
         return title
     return '旧梦'
 
+# 获取封面图片URL
+def getPictureUrl(bvNo):
+    url2 = f'http://www.bilibili.com/video/{bvNo}'
+    result = get_page_info(url2)
+    if type(result) != str:
+        html_data = result.text
+
+        # 经过研究，封面的url就在itemprop="image里面的content的值中。@后面是略缩图了，不需要。
+        json_str = re.findall('itemprop="image(.*?)>', html_data, re.S)[0]
+        new_str = re.search('content=(.*)@', json_str, re.S).group()
+        # 修剪
+        new_str = new_str.lstrip("content=")
+        new_str = new_str.lstrip("'")
+        new_str = new_str.lstrip('"')
+        new_str = new_str.rstrip('@')
+        final_picture_url = 'https:'+new_str  # 成功获取到图片地址
+        return final_picture_url
+    # 失败时：返回我的百度头像地址
+    return '//himg.bdimg.com/sys/portraitn/item/public.1.a8f88370.dMVW5WwBuH51v92oqmRXJw'
+
 
 # 总函数
 def getPictureMain(bvNo, global_dict, fileName):
