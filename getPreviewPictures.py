@@ -1,16 +1,17 @@
 import io
 # allows for image formats other than gif
 from PIL import Image, ImageTk
-try:
-  # Python2
-  import Tkinter as tk
-  from urllib2 import urlopen
-except ImportError:
-  # Python3
-  import tkinter as tk
-  from urllib.request import urlopen
+# try:
+#   # Python2
+#   import Tkinter as tk
+#   from urllib2 import urlopen
+# except ImportError:
+#   # Python3
+#   import tkinter as tk
+#   from urllib.request import urlopen
 
-
+import tkinter as tk
+from urllib.request import urlopen
 def resize(w, h, w_box, h_box, pil_image):
     f1 = w_box / w
     f2 = h_box / h
