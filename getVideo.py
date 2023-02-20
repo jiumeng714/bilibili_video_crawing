@@ -165,7 +165,7 @@ def video_audio_merge_ffmpeg(video_name, filePath):
     myVideoName = video_name + '.mp4'
     myAudioPath = filePath + '/' + myAudioName  # 需要合成的音频路径
     myVideoPath = filePath + '/' + myVideoName  # 需要合成的视频路径
-    output_path = myVideoPath + '_jm.mp4'  # 合成的视频输出路径
+    output_path = filePath + '/' + video_name + '_jm.mp4'   # 合成的视频输出路径
     audio_file = ffmpeg.input(myAudioPath)
     video_file = ffmpeg.input(myVideoPath)
     # output_file = ffmpeg.output(audio_file, video_file, filename=output_path,
