@@ -2,7 +2,7 @@
 哔哩哔哩，B站视频和封面原图爬取
 主要界面
 ![image](https://user-images.githubusercontent.com/66453249/213915578-11a9a11f-3db3-4d85-b726-c2cf8a1e3791.png)
-![image](https://user-images.githubusercontent.com/66453249/213915628-304bb653-4ef1-4ab2-b39e-2cc833c0a8c7.png)
+
 
 现使用时发现还是得有个预览封面的功能，已增添上去。
 
