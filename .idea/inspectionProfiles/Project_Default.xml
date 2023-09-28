@@ -1,7 +1,7 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
-    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+    <inspection_tool class="DuplicatedCode" enabled="false" level="WEAK WARNING" enabled_by_default="false">
       <Languages>
         <language minSize="136" name="Python" />
       </Languages>
@@ -34,6 +34,7 @@
           <option value="http://primefaces.org/ui" />
           <option value="http://tiles.apache.org/" />
           <option value="http://www.bilibili.com" />
+          <option value="http://" />
         </list>
       </option>
     </inspection_tool>
@@ -51,6 +52,8 @@
           <option value="N802" />
           <option value="N813" />
           <option value="N806" />
+          <option value="N812" />
+          <option value="N811" />
         </list>
       </option>
     </inspection_tool>

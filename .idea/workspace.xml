@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f9ee6b90-69b6-4335-b6ed-fe977f17b4df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitgnore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitgnore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bilibili_video_install.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/1080p获取.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/cookie研究.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/cookie转字典测试/Cookie字符串转字典.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/cookie转字典测试/info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/cookie转字典测试/test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/image/读写封面图测试.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/image/读取网络图片资源.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/jiumeng.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/合成音频测试.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/合成音频测试2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/build/队列/Analysis-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/build/队列/COLLECT-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/build/队列/EXE-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/build/队列/PKG-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/build/队列/PYZ-00.pyz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/build/队列/PYZ-00.toc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/build/队列/base_library.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/build/队列/warn-队列.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/build/队列/xref-队列.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/build/队列/队列.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/build/队列/队列.exe.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/build/队列/队列.pkg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/多线程1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/多进程1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/线程池测试2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/队列.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/队列.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/多线程测试/队列练习.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/字典数据研究.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/对象添加列表测试.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/封面获取/封面获取测试1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/测试路径选择.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/爬取B站视频封面.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/线程操作.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/请求测试/ces.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/请求测试/jiumeng.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/请求测试/请求测试.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/读写测试/new.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/读写测试/test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/读写测试/读写研究.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/about_test/过滤特殊字符.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/jm_bilibil_video/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/jm_bilibil_video/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/jm_bilibil_video/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/jm_bilibil_video/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/jm_bilibil_video/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/jm_bilibil_video/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/jm_bilibil_video/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/jm_bilibil_video/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/jm_bilibil_video/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/jm_bilibil_video/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/jm_bilibil_video/jm_bilibil_video.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/jm_bilibil_video/jm_bilibil_video.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/jm_bilibil_video/warn-jm_bilibil_video.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/jm_bilibil_video/warn-jm_bilibil_video.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/jm_bilibil_video/xref-jm_bilibil_video.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/jm_bilibil_video/xref-jm_bilibil_video.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/B站网站代码研究.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/B站网站代码研究.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2K6yJDNRfmm0tnMrfqMnc4D05Lt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Project/PythonProject/jiumeng_test/bilibili_video_install&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Project\PythonProject\jiumeng_test\bilibili_video_install\dist" />
+      <recent name="F:\Project\PythonProject\jiumeng_test\bilibili_video_install" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.cookie获取">
+    <configuration name="读取网络图片资源" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bilibili_video_install" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/about_test/image" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/about_test/image/读取网络图片资源.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cookie获取" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bilibili_video_install" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/about_test/cookie获取测试" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/about_test/cookie获取测试/cookie获取.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="jm_bilibil_video" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="bilibili_video_install" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jm_bilibil_video.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.cookie获取" />
+        <item itemvalue="Python.jm_bilibil_video" />
+        <item itemvalue="Python.读取网络图片资源" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f9ee6b90-69b6-4335-b6ed-fe977f17b4df" name="Changes" comment="" />
+      <created>1673309252631</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673309252631</updated>
+      <workItem from="1673309253800" duration="6389000" />
+      <workItem from="1674134019127" duration="5168000" />
+      <workItem from="1675123419139" duration="494000" />
+      <workItem from="1675938796996" duration="632000" />
+      <workItem from="1676891414837" duration="1641000" />
+      <workItem from="1677911726618" duration="73000" />
+      <workItem from="1679570603706" duration="1447000" />
+      <workItem from="1680708299801" duration="776000" />
+      <workItem from="1680825451351" duration="617000" />
+      <workItem from="1686444749411" duration="2684000" />
+    </task>
+    <task id="LOCAL-00001" summary="增加了预览封面的功能后重新打包">
+      <created>1674138059449</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1674138059449</updated>
+    </task>
+    <task id="LOCAL-00002" summary="增加了预览封面的功能后重新打包">
+      <created>1676892374540</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676892374540</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="增加了预览封面的功能后重新打包" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加了预览封面的功能后重新打包" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/bilibili_video_install$.coverage" NAME="读取网络图片资源 Coverage Results" MODIFIED="1674135260795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/about_test/image" />
+    <SUITE FILE_PATH="coverage/bilibili_video_install$jm_bilibil_video.coverage" NAME="jm_bilibil_video Coverage Results" MODIFIED="1680708527675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/bilibili_video_install$cookie.coverage" NAME="cookie获取 Coverage Results" MODIFIED="1686448097033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/about_test/cookie获取测试" />
+  </component>
+</project>
