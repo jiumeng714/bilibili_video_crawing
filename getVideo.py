@@ -10,7 +10,7 @@ import os
 import threading
 import ffmpeg  # 处理音频和视频合成
 from getVideoPicture import getDefaultFileNameByHtmlData  # 获取用户名+视频标题。
-
+import VideoToAudio as voAuOp  # 视频提取音频操作。
 
 # 伪造请求头,携带cookie，以获取更高画质的video
 headers = {
@@ -21,6 +21,8 @@ headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0',
 
 }
+
+jm_video_title = 'jm'
 
 
 # https://www.bilibili.com/video/BV1124y117Dr/?p=9&spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=88de6d7bf2afd93889536491926ffed3
@@ -96,7 +98,7 @@ def parse_page(data):
     elif pictureQualityInfo == 16:
         pictureQuality = '360P 流畅'
     else:
-        pictureQuality = '未知画质,画质质量值：'+ str(pictureQualityInfo)
+        pictureQuality = '未知画质,画质质量值：' + str(pictureQualityInfo)
     down_list.append(pictureQuality)
 
     # 测试研究部分
@@ -121,7 +123,7 @@ def write_res(filename, data, path):
     :param path: 文件路径
     :return:
     """
-    with open(r''+path + '/' + filename, 'wb') as f:
+    with open(r'' + path + '/' + filename, 'wb') as f:
         f.write(data)
         f.close()
 
@@ -165,7 +167,7 @@ def video_audio_merge_ffmpeg(video_name, filePath):
     myVideoName = video_name + '.mp4'
     myAudioPath = filePath + '/' + myAudioName  # 需要合成的音频路径
     myVideoPath = filePath + '/' + myVideoName  # 需要合成的视频路径
-    output_path = filePath + '/' + video_name + '_jm.mp4'   # 合成的视频输出路径
+    output_path = filePath + '/' + video_name + '_jm.mp4'  # 合成的视频输出路径
     # 如果output_path 已经存在对应的文件，就先删了它
     if os.path.exists(output_path):
         os.remove(output_path)
@@ -186,14 +188,16 @@ def video_audio_merge_ffmpeg(video_name, filePath):
 
 
 # 通过BV号获取下载音视频
-def getVideoByBV(bvNo, path, global_dict):  # 通过BV号获取音频和视频
+def getVideoByBV(bvNo, path, global_dict, isOnlyAudio=False):  # 通过BV号获取音频和视频
     """
     用于 通过BV号爬取信息
     :param bvNo:
     :param path:
+    :param isOnlyAudio 默认输出视频，如果只要音频，将该值改为True
     :param global_dict: 方便输出信息到text框
     :return:
     """
+
     # 进行多线程处理,避免tkinter一直在转，等待。
 
     def getUrlList():
@@ -201,7 +205,7 @@ def getVideoByBV(bvNo, path, global_dict):  # 通过BV号获取音频和视频
         # 配置颜色
         tk_text.tag_config('jiumeng2', foreground='red')
         tk_text.tag_config('zhl', foreground='deeppink')
-        tk_text.tag_config('nice',  foreground='#281285')
+        tk_text.tag_config('nice', foreground='#281285')
         tk_text.insert('end', '获取到的BV号为:' + bvNo + '\n')
         url2 = f'http://www.bilibili.com/video/{bvNo}'
         if type(get_page(url2)) is str:
@@ -215,8 +219,10 @@ def getVideoByBV(bvNo, path, global_dict):  # 通过BV号获取音频和视频
             down_url_list = parse_page(html_data)  # 得到带有音频和视频url的列表。
 
             # 获取到该音频去除了干扰信息后的标题。
+            global jm_video_title
             title = down_url_list[2].replace(' ', '').replace('_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili', '')
             pictureQuality = down_url_list[-1]
+            jm_video_title = title
 
             tk_text.insert('end', f'即将下载本视频【{title}】:最高画质(与账号有关)：' + pictureQuality + '\n', 'nice')
 
@@ -253,11 +259,20 @@ def getVideoByBV(bvNo, path, global_dict):  # 通过BV号获取音频和视频
             # jm_Thread1_3.start()
             # jm_Thread1_3.join()
             video_audio_merge_ffmpeg(title, path)
-            tk_text.insert('end', '【' + title + '】视频已成功整合到输出目录中!!!!!!!!!!!!!!!！\n----------\n', 'jiumeng2')
+            if isOnlyAudio is True:
+                # 将视频转音频
+                voAuOp.handle_main(path, title)
+                tk_text.insert('end', '【' + title + '】音频已成功输出到指定目录中!!!!!!!!!!!!!!!！\n----------\n',
+                               'jiumeng2')
+            else:
+                tk_text.insert('end', '【' + title + '】视频已成功整合到输出目录中!!!!!!!!!!!!!!!！\n----------\n', 'jiumeng2')
 
     # 不另外用一个线程的话，tkinter模块会原地打转
     jm_Thread1 = threading.Thread(target=getUrlList)
     jm_Thread1.start()
+
+    # 返回
+    return path
 
 
 def main(bilibiliUrl, path, global_dict, num):
@@ -270,9 +285,23 @@ def main(bilibiliUrl, path, global_dict, num):
     :return:
     """
     if num != 1:
-        BV = getBVbyUrl(bilibiliUrl)+'?p='+str(num)
+        BV = getBVbyUrl(bilibiliUrl) + '?p=' + str(num)
     else:
         BV = getBVbyUrl(bilibiliUrl)
     getVideoByBV(BV, path, global_dict)
 
 
+def main_onlyAudio(bilibiliUrl, path, global_dict, num):
+    """
+    向外暴露使用方法，通过对应的url下载视频。
+    :param bilibiliUrl: 哔哩哔哩视频URL
+    :param path: 路径
+    :param global_dict : 用于传输tkinter文本输出框对象，便于在此模块写一些信息到输出框
+    :param num : 视频集数
+    :return:
+    """
+    if num != 1:
+        BV = getBVbyUrl(bilibiliUrl) + '?p=' + str(num)
+    else:
+        BV = getBVbyUrl(bilibiliUrl)
+    videoPath = getVideoByBV(BV, path, global_dict, isOnlyAudio=True)

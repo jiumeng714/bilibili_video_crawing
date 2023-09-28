@@ -15,7 +15,6 @@ import getPreviewPictures as gpp  # 获取预览图片
 
 global_dict = {}
 
-
 if __name__ == '__main__':
     existFileResult = os.path.isfile('info.json')
     if not existFileResult:  # 如果不存在这个配置信息文件时，进行创建
@@ -72,9 +71,9 @@ if __name__ == '__main__':
         beginSet = text2_1.get('1.0', 'end').strip()
         work_contents = text3.get('1.0', 'end').strip()
 
-        if url == '' or beginSet == ''  or work_contents == '':
+        if url == '' or beginSet == '' or work_contents == '':
             tk.messagebox.showinfo('error', '视频URL、集数、输出目录不能为空！')
-        elif str.isdecimal(beginSet) is not True :
+        elif str.isdecimal(beginSet) is not True:
             tk.messagebox.showinfo('error', '集数只能输入数字')
         else:
             beginSet = int(beginSet)
@@ -94,6 +93,33 @@ if __name__ == '__main__':
                 print(e)
                 tk.messagebox.showinfo('error', str(e))
 
+
+    def btn6_fn():
+        url = text1.get('1.0', 'end').strip()
+        beginSet = text2_1.get('1.0', 'end').strip()
+        work_contents = text3.get('1.0', 'end').strip()
+
+        if url == '' or beginSet == '' or work_contents == '':
+            tk.messagebox.showinfo('error', '视频URL、集数、输出目录不能为空！')
+        elif str.isdecimal(beginSet) is not True:
+            tk.messagebox.showinfo('error', '集数只能输入数字')
+        else:
+            beginSet = int(beginSet)
+            text.insert('end', '准备完毕\n', 'jiumeng')
+            text.tag_config('jiumeng', foreground='green')
+
+            def fn(n):
+                # 关键的核心,下载音频后提取音频做处理。
+                gv.main_onlyAudio(url, work_contents, global_dict, n)
+
+            try:
+                # t = threading.Thread(target=fn, args=(beginSet,))
+                # t.start()
+                # t.join()
+                fn(beginSet)
+            except Exception as e:
+                print(e)
+                tk.messagebox.showinfo('error', str(e))
 
     # 添加cookie
     def btn3_fn():
@@ -156,7 +182,10 @@ if __name__ == '__main__':
 
 
     btn2 = ttk.Button(root, text='爬取视频', style='ZHL.TButton', command=btn2_fn)
-    btn2.place(relx=0.35, rely=0.7, relwidth=0.3, relheight=0.1)
+    btn2.place(relx=0.35, rely=0.7, relwidth=0.25, relheight=0.1)
+
+    btn6 = ttk.Button(root, text='爬取音频', style='ZHL.TButton', command=btn6_fn)
+    btn6.place(relx=0.7, rely=0.7, relwidth=0.25, relheight=0.1)
 
     btn3 = ttk.Button(root, text='添加Cookie', style='ZHL.TButton', command=btn3_fn)
     btn3.place(relx=0.05, rely=0.75, relwidth=0.2, relheight=0.06)
@@ -167,6 +196,7 @@ if __name__ == '__main__':
     btn5 = ttk.Button(root, text='保存封面', style='ZHL.TButton', command=btn5_fn)
     btn5.place(relx=0.05, rely=0.89, relwidth=0.2, relheight=0.06)
 
+
     def myDefault():
         text.insert('end', '输出结果台：\n注意！如果不加入B站cookie，则最高画质只有480p！\n')
         text2_1.insert('end', 1)
@@ -175,6 +205,7 @@ if __name__ == '__main__':
         myInfo = json.load(file3)
         text3.insert('end', myInfo['output'])
         file3.close()
+
 
     myDefault()  # 注入默认的数据
     root.mainloop()
