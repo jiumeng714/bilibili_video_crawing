@@ -18,7 +18,9 @@ def resize(w, h, w_box, h_box, pil_image):
     factor = min(f1, f2)
     width = int(w * factor)
     height = int(h * factor)
-    return pil_image.resize((width, height), Image.ANTIALIAS)
+    # 高版本 Pillow 去掉了 Image.ANTIALIAS，这里做一下兼容
+    resample = getattr(Image, 'Resampling', Image).LANCZOS
+    return pil_image.resize((width, height), resample)
 
 
 # 返回需要预览的图片对象

@@ -32,7 +32,7 @@ if __name__ == '__main__':
     label1.place(relx=0.01, relheight=0.05, relwidth=0.2, rely=0.42)
     text1 = tk.Text(root, font='consolas 10 bold', fg='#1d1d1d')
     text1.place(relx=0.22, relheight=0.1, relwidth=0.73, rely=0.42)
-    label2 = tk.Label(root, text='集数： ')
+    label2 = tk.Label(root, text='集数(分P)： ')
     label2.place(relx=0.01, relheight=0.05, relwidth=0.2, rely=0.53)
     text2_1 = tk.Text(root, font='consolas 10 bold', fg='#1d1d1d')
     text2_1.place(relx=0.22, relheight=0.05, relwidth=0.2, rely=0.53)
@@ -75,6 +75,8 @@ if __name__ == '__main__':
             tk.messagebox.showinfo('error', '视频URL、集数、输出目录不能为空！')
         elif str.isdecimal(beginSet) is not True:
             tk.messagebox.showinfo('error', '集数只能输入数字')
+        elif not os.path.isdir(work_contents):
+            tk.messagebox.showinfo('error', '输出目录不存在，请点「修改输出目录」重新选择！')
         else:
             beginSet = int(beginSet)
             text.insert('end', '准备完毕，接下来进行多线程下载\n', 'jiumeng')
@@ -85,9 +87,6 @@ if __name__ == '__main__':
                 gv.main(url, work_contents, global_dict, n)
 
             try:
-                # t = threading.Thread(target=fn, args=(beginSet,))
-                # t.start()
-                # t.join()
                 fn(beginSet)
             except Exception as e:
                 print(e)
@@ -103,6 +102,8 @@ if __name__ == '__main__':
             tk.messagebox.showinfo('error', '视频URL、集数、输出目录不能为空！')
         elif str.isdecimal(beginSet) is not True:
             tk.messagebox.showinfo('error', '集数只能输入数字')
+        elif not os.path.isdir(work_contents):
+            tk.messagebox.showinfo('error', '输出目录不存在，请点「修改输出目录」重新选择！')
         else:
             beginSet = int(beginSet)
             text.insert('end', '准备完毕\n', 'jiumeng')
@@ -113,9 +114,6 @@ if __name__ == '__main__':
                 gv.main_onlyAudio(url, work_contents, global_dict, n)
 
             try:
-                # t = threading.Thread(target=fn, args=(beginSet,))
-                # t.start()
-                # t.join()
                 fn(beginSet)
             except Exception as e:
                 print(e)
@@ -145,8 +143,14 @@ if __name__ == '__main__':
         child_window = tk.Toplevel(root)
         child_window.title('输入Cookie')
         child_window.geometry('800x500+250+150')
+        tip = tk.Label(
+            child_window,
+            text='把 F12 -> 网络 -> 任意请求里的整条 cookie 复制进来即可（SESSDATA、buvid3 等都带上，'
+                 '更不容易被风控，也能解锁自己账号可看的画质）',
+            wraplength=760, justify='left', fg='#281285')
+        tip.place(relx=0.05, relheight=0.08, relwidth=0.9, rely=0.0)
         child_text = scrolledtext.ScrolledText(child_window, font=('微软雅黑', 10))
-        child_text.place(relx=0.05, relheight=0.6, relwidth=0.9, rely=0.05)
+        child_text.place(relx=0.05, relheight=0.55, relwidth=0.9, rely=0.09)
         child_btn = ttk.Button(child_window, text='保存Cookie', command=child_btn_fn)
         child_btn.place(relx=0.35, relheight=0.1, relwidth=0.3, rely=0.7)
 
@@ -156,12 +160,19 @@ if __name__ == '__main__':
         if url == '':
             tk.messagebox.showinfo('error', '视频URL还没输入！')
         else:
-            newBV = gv.getBVbyUrl(url)
-            defaultFileName = gp.getDefaultFileName(newBV)
-            fileName = filelog.asksaveasfilename(title='请输入要保存的图片名字！', initialfile=defaultFileName)
-            if fileName != '':
-                gp.getPictureMain(newBV, global_dict, fileName)
-                tk.messagebox.showinfo('success', '保存图片成功！')
+            try:
+                newBV = gv.getBVbyUrl(url)
+                defaultFileName = gp.getDefaultFileName(newBV)
+                fileName = filelog.asksaveasfilename(title='请输入要保存的图片名字！',
+                                                     initialfile=defaultFileName)
+                if fileName != '':
+                    if gp.getPictureMain(newBV, global_dict, fileName) is None:
+                        tk.messagebox.showinfo('error', '获取封面失败，详情看下面的输出台。')
+                    else:
+                        tk.messagebox.showinfo('success', '保存图片成功！')
+            except Exception as e:
+                print(e)
+                tk.messagebox.showinfo('error', str(e))
 
     # 查看封面
     def btn4_fn():
@@ -169,16 +180,20 @@ if __name__ == '__main__':
         if url == '':
             tk.messagebox.showinfo('error', '视频URL还没输入！')
         else:
-            newBV = gv.getBVbyUrl(url)
-            pictureUrl = gp.getPictureUrl(newBV)  # 获取到需要预览的图片地址
-            # 创建子窗口
-            child_window2 = tk.Toplevel(root)
-            child_window2.title('封面预览')
-            tk_image = gpp.returnPicture(pictureUrl)
-            label = tk.Label(child_window2, image=tk_image, bg='brown')
-            label.pack(padx=5, pady=5)
-            child_window2.geometry('800x500+250+150')
-            child_window2.mainloop()
+            try:
+                newBV = gv.getBVbyUrl(url)
+                pictureUrl = gp.getPictureUrl(newBV)  # 获取到需要预览的图片地址
+                # 创建子窗口
+                child_window2 = tk.Toplevel(root)
+                child_window2.title('封面预览')
+                tk_image = gpp.returnPicture(pictureUrl)
+                label = tk.Label(child_window2, image=tk_image, bg='brown')
+                label.pack(padx=5, pady=5)
+                child_window2.geometry('800x500+250+150')
+                child_window2.mainloop()
+            except Exception as e:
+                print(e)
+                tk.messagebox.showinfo('error', str(e))
 
 
     btn2 = ttk.Button(root, text='爬取视频', style='ZHL.TButton', command=btn2_fn)
@@ -198,12 +213,14 @@ if __name__ == '__main__':
 
 
     def myDefault():
-        text.insert('end', '输出结果台：\n注意！如果不加入B站cookie，则最高画质只有480p！\n')
+        text.insert('end', '输出结果台：\n'
+                           '注意！如果不加入B站cookie，则最高画质只有480p！\n'
+                           '视频URL可以直接粘贴浏览器地址栏里的整条链接（带 ?p=2 也能识别分P）\n')
         text2_1.insert('end', 1)
         # 获取输出路径信息
         file3 = open('info.json', 'r')
         myInfo = json.load(file3)
-        text3.insert('end', myInfo['output'])
+        text3.insert('end', myInfo.get('output', ''))
         file3.close()
 
 
