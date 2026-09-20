@@ -2,7 +2,6 @@
 哔哩哔哩，B站视频和封面原图爬取
 主要界面
 ![image](https://user-images.githubusercontent.com/66453249/213915578-11a9a11f-3db3-4d85-b726-c2cf8a1e3791.png)
-![image](https://user-images.githubusercontent.com/66453249/213915628-304bb653-4ef1-4ab2-b39e-2cc833c0a8c7.png)
 
 现使用时发现还是得有个预览封面的功能，已增添上去。
 
@@ -17,9 +16,6 @@
 | `jm_B站视频封面爬取.exe` | 界面版，双击就能用，推荐给普通用户 |
 | `jm_cmd_B站视频封面爬取.exe` | 界面版 + 控制台窗口，出问题时能看到详细报错 |
 | `dist/jm_cli.exe` | 纯命令行版，参数见下面的「命令行版」 |
-
-具体的代码思路可以看看这篇文章：
-https://www.bilibili.com/read/cv21098039
 
 ---
 
